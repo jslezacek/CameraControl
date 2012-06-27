@@ -24,4 +24,15 @@ public class TestCamera {
         c.powerOn();
     }
 
+
+    @Test
+    public void switchingTheCameraOffPowersDownTheSensor() {
+        context.checking(new Expectations() {{
+            exactly(1).of(s).powerDown();}
+        });
+
+        c.powerOff();
+    }
+
+
 }
