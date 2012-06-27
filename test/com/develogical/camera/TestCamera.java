@@ -34,5 +34,26 @@ public class TestCamera {
         c.powerOff();
     }
 
+    @Test
+    // expected state OFF
+    public void pressShutterWhenPowerOffDoesNada() {
+        context.checking(new Expectations() {{
+            never(s);
+        }
+        });
+
+        c.pressShutter();
+    }
+
+    @Test
+    public void pressShutterWhenPowerOnCopiesData() {
+        context.checking(new Expectations() {{
+            never(s);
+        }
+        });
+
+        c.pressShutter();
+    }
+
 
 }
